@@ -1,16 +1,31 @@
-# grocery_app
+# 📱 Smart Grocery App
 
-A new Flutter project.
+A simple and clean **Flutter Grocery App** built for practice, UI learning, and fresher interview projects.  
+This app includes item browsing, search, category filtering, and a cart system with mock backend data.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🔍 **Search Grocery Items**
+- 🥦 **Filter by Categories** (Fruits, Vegetables, Dairy)
+- 🛒 **Add / Remove items from Cart**
+- 🎨 Animated Item Cards for smooth UI
+- 🌈 Clean Material UI with custom colors
+- 🌐 Runs on **Android, iOS, and Web**
+- 📂 Clean folder structure (`lib/screens/`, `lib/models/`, `lib/widgets/`, `lib/data/`)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 App Screenshots
+
+Store screenshots in the `screenshots/` folder of this repository.
+
+### 🔹 Home Screen  
+<img src="screenshots/home_screen.png" width="260">
+
+### 🔹 Cart Screen  
+<img src="screenshots/cart_screen.png" width="260">
+
+### 🔹 Search Screen 
+<img src="screenshots/search_screen.png" width="260">
