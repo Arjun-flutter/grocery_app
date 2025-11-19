@@ -22,10 +22,10 @@ This app includes item browsing, search, category filtering, and a cart system w
 Store screenshots in the `screenshots/` folder of this repository.
 
 ### 🔹 Home Screen  
-<img src="screenshots/home_screen.png" width="260">
+<img src="screenshots/home ui.png" width="260">
 
 ### 🔹 Cart Screen  
-<img src="screenshots/cart_screen.png" width="260">
+<img src="screenshots/cart.png" width="260">
 
 ### 🔹 Search Screen 
-<img src="screenshots/search_screen.png" width="260">
+<img src="screenshots/search.png" width="260">
