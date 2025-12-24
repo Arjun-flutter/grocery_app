@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/data/fake_db.dart';
-import '../widgets/item_card.dart';
+import 'package:grocery_app/widgets/item_card.dart';
+
 import 'cart_page.dart';
 
 class HomeScreen extends StatefulWidget {
