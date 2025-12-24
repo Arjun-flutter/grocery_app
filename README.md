@@ -16,7 +16,6 @@ This app includes item browsing, search, category filtering, and a cart system w
 - 📂 Clean folder structure (`lib/screens/`, `lib/models/`, `lib/widgets/`, `lib/data/`)
 
 ---
-
 ## 📸 App Screenshots
 
 Store screenshots in the `screenshots/` folder of this repository.
