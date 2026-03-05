@@ -27,7 +27,7 @@ class CartItemTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // 🖼️ Product Image with Discount Badge
+          //  Product Image with Discount Badge
           Stack(
             children: [
               Container(
@@ -63,7 +63,7 @@ class CartItemTile extends StatelessWidget {
           ),
           const SizedBox(width: 15),
 
-          // 📝 Details
+          //  Details
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +98,7 @@ class CartItemTile extends StatelessWidget {
             ),
           ),
 
-          // ➕➖ Quantity & 🗑️ Delete Controls
+          //  Quantity & 🗑️ Delete Controls
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [

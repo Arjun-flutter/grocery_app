@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: const Color(0xFF0B845C), // Deep Emerald Green
       body: Stack(
         children: [
-          // 🌿 Background Patterns
+          //  Background Patterns
           Positioned(
             top: -50,
             right: -50,
@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // 🛒 Unique Icon Design
+                //  Unique Icon Design
                 TweenAnimationBuilder(
                   duration: const Duration(seconds: 2),
                   tween: Tween<double>(begin: 0, end: 1),
@@ -87,7 +87,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 
                 const SizedBox(height: 40),
                 
-                // 📝 App Name with unique styling
+                //  App Name with unique styling
                 const Text(
                   "FRESH MART",
                   style: TextStyle(
@@ -123,7 +123,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           
-          // 🔄 Bottom Loader
+          //  Bottom Loader
           const Positioned(
             bottom: 50,
             left: 0,

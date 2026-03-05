@@ -32,7 +32,7 @@ class CartPaymentPanel extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // 📊 Subtotal & Delivery Row
+          // Subtotal & Delivery Row
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -46,13 +46,13 @@ class CartPaymentPanel extends StatelessWidget {
             ],
           ),
           
-          // 📏 Divider between Billing and Total
+          //  Divider between Billing and Total
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 12),
             child: Divider(color: Colors.white12, height: 1),
           ),
 
-          // 💰 Total & Pay Button Row
+          //  Total & Pay Button Row
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

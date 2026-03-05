@@ -25,7 +25,7 @@ class ProductDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🖼️ Large Product Image
+            //  Large Product Image
             Container(
               height: 300,
               width: double.infinity,
@@ -42,7 +42,7 @@ class ProductDetailsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 🏷️ Category Badge
+                  //  Category Badge
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
@@ -56,7 +56,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
 
-                  // 📝 Title & Rating
+                  //  Title & Rating
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -87,7 +87,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
 
-                  // 💰 Price & Discount
+                  //  Price & Discount
                   Row(
                     children: [
                       Text(
@@ -122,7 +122,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 25),
 
-                  // 📝 Description
+                  //  Description
                   const Text(
                     "Description",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -140,7 +140,7 @@ class ProductDetailsScreen extends StatelessWidget {
         ),
       ),
       
-      // 🛒 Add to Cart Bottom Button
+      //  Add to Cart Bottom Button
       bottomSheet: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(

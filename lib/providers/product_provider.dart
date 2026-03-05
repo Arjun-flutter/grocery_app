@@ -4,6 +4,7 @@ import '../services/api_service.dart';
 import '../widgets/category_list.dart';
 
 class ProductProvider with ChangeNotifier {
+  final ApiService _apiService = ApiService();
   List<Product> _allProducts = [];
   List<Product> _filteredProducts = [];
   bool _isLoading = false;
@@ -11,19 +12,16 @@ class ProductProvider with ChangeNotifier {
   String _searchQuery = "";
   String _selectedCategory = "All";
 
-  List<Product> get products =>
-      _filteredProducts.isEmpty &&
-          _searchQuery.isEmpty &&
-          _selectedCategory == "All"
-      ? _allProducts
-      : _filteredProducts;
+  // Getters
+  List<Product> get products => _filteredProducts;
 
   bool get isLoading => _isLoading;
 
   String get errorMessage => _errorMessage;
 
-  final ApiService _apiService = ApiService();
+  String get selectedCategory => _selectedCategory;
 
+  // Fetch products
   Future<void> fetchProducts() async {
     _isLoading = true;
     _errorMessage = '';
@@ -31,7 +29,9 @@ class ProductProvider with ChangeNotifier {
 
     try {
       _allProducts = await _apiService.fetchProducts();
-      _applyFilter(); // Initial filter
+
+      // Initial filter
+      _applyFilter();
     } catch (e) {
       _errorMessage = e.toString();
     } finally {
@@ -40,26 +40,34 @@ class ProductProvider with ChangeNotifier {
     }
   }
 
-  // Logic moved from UI to Provider
+  // Search update
   void updateSearch(String query) {
     _searchQuery = query.toLowerCase();
     _applyFilter();
   }
 
+  // Category update
   void updateCategory(String category) {
     _selectedCategory = category;
     _applyFilter();
   }
 
+  // Filter Logic
   void _applyFilter() {
-    _filteredProducts = _allProducts.where((p) {
-      final matchesSearch = p.title.toLowerCase().contains(_searchQuery);
-      final matchesCategory = CategoryList.isProductInSelectedCategory(
-        p.title,
-        _selectedCategory,
-      );
+    _filteredProducts = _allProducts.where((product) {
+      final matchesSearch =
+          _searchQuery.isEmpty ||
+          product.title.toLowerCase().contains(_searchQuery);
+      final matchesCategory =
+          _selectedCategory == "All" ||
+          CategoryList.isProductInSelectedCategory(
+            product.title,
+            _selectedCategory,
+          );
+
       return matchesSearch && matchesCategory;
     }).toList();
+
     notifyListeners();
   }
 }

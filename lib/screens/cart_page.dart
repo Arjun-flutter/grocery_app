@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
 import '../widgets/cart_item_tile.dart';
@@ -7,6 +8,7 @@ import '../widgets/payment_option_tile.dart';
 import '../widgets/processing_overlay.dart';
 import '../services/payment_service.dart';
 import 'payment_success_screen.dart';
+import 'main_navigation_screen.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -24,12 +26,12 @@ class _CartPageState extends State<CartPage> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.transparent, // Transparent to show custom shape
+      backgroundColor: Colors.transparent,
       builder: (context) => StatefulBuilder(
         builder: (context, setModalState) => Container(
           padding: const EdgeInsets.all(25),
           decoration: const BoxDecoration(
-            color: Color(0xFF121212), // Deep Black Background
+            color: Color(0xFF121212),
             borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
           ),
           child: Column(
@@ -95,7 +97,7 @@ class _CartPageState extends State<CartPage> {
                     _handleCheckout();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFA000), // Amber Gold
+                    backgroundColor: const Color(0xFFFFA000),
                     foregroundColor: Colors.black,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                   ),
@@ -178,7 +180,19 @@ class _CartPageState extends State<CartPage> {
           const Text("Your basket is empty", style: TextStyle(fontSize: 18, color: Colors.grey)),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () => Navigator.maybePop(context),
+            onPressed: () {
+              // Navigate to the root screen (Home)
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
+                (route) => false,
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1B4332),
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+              textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)
+            ),
             child: const Text("Start Shopping"),
           )
         ],

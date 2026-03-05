@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // 👤 Profile Header
+            //  Profile Header
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 30),
@@ -52,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // 📋 Profile Options using Reusable Widget
+            //  Profile Options using Reusable Widget
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(

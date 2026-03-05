@@ -48,61 +48,67 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const Color primaryColor = Color(0xFF0B845C);
-
+    const Color primaryColor = Color(0xFF1B4332);
+    //  Calculate responsive header height (35% of screen height)
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double headerHeight = screenHeight * 0.35;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: 350,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(100),
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [primaryColor, Color(0xFF065F42)],
-                ),
+      resizeToAvoidBottomInset: true, 
+      body: Column(
+        children: [
+          // Responsive Header
+          Container(
+            height: headerHeight,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(100),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 40, top: 100),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Icon(Icons.shopping_bag_rounded, size: 40, color: Colors.white),
-                    ),
-                    const SizedBox(height: 30),
-                    const Text(
-                      "Welcome!",
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 2,
-                      ),
-                    ),
-                    const Text(
-                      "Sign in to start fresh",
-                      style: TextStyle(fontSize: 16, color: Colors.white70),
-                    ),
-                  ],
-                ),
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [primaryColor, Color(0xFF081C15)],
               ),
             ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 40, bottom: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end, // Align content to bottom of header
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Icon(Icons.shopping_bag_rounded, size: 40, color: Colors.white),
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Welcome!",
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                  const Text(
+                    "Sign in to start fresh",
+                    style: TextStyle(fontSize: 16, color: Colors.white70),
+                  ),
+                ],
+              ),
+            ),
+          ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+          // Scrollable Form Section
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
               child: Column(
                 children: [
                   CustomTextField(
@@ -116,14 +122,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     icon: Icons.lock_outline_rounded,
                     controller: _passwordController,
                     isObscure: true,
-                  ),
-                  
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text("Forgot Password?", style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold)),
-                    ),
                   ),
                   
                   const SizedBox(height: 30),
@@ -149,10 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                   
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 30),
                   
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       const Text("New user?", style: TextStyle(color: Colors.grey)),
                       TextButton(
@@ -166,8 +164,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

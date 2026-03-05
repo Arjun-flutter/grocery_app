@@ -48,54 +48,60 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const Color primaryColor = Color(0xFF1B4332); // Modern Forest Green
+    const Color primaryColor = Color(0xFF1B4332);
+    //  Calculate responsive header height (30% of screen height)
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double headerHeight = screenHeight * 0.30;
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Diagonal Header for Register
-            Container(
-              height: 250,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(100),
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [primaryColor, Color(0xFF081C15)],
-                ),
+      resizeToAvoidBottomInset: true,
+      body: Column(
+        children: [
+          // Responsive Header
+          Container(
+            height: headerHeight,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(100),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 30, top: 60),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BackButton(color: Colors.white),
-                    const SizedBox(height: 10),
-                    const Text(
-                      "Join Us!",
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 2,
-                      ),
-                    ),
-                    const Text(
-                      "Start your fresh journey today",
-                      style: TextStyle(fontSize: 16, color: Colors.white70),
-                    ),
-                  ],
-                ),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [primaryColor, Color(0xFF081C15)],
               ),
             ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30, bottom: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const BackButton(color: Colors.white),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Join Us!",
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                  const Text(
+                    "Start fresh today",
+                    style: TextStyle(fontSize: 16, color: Colors.white70),
+                  ),
+                ],
+              ),
+            ),
+          ),
 
-            Padding(
+          // Scrollable Form Section
+          Expanded(
+            child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
               child: Column(
                 children: [
@@ -143,7 +149,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(height: 30),
                   
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       const Text("Already a member?", style: TextStyle(color: Colors.grey)),
                       TextButton(
@@ -155,8 +161,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
