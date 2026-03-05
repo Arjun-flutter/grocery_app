@@ -62,7 +62,7 @@ lib/
 
 ## ⚙️ Setup & Installation
 
-1. **Clone the repo:** `git clone https://github.com/your-username/grocery_app.git`
+1. **Clone the repo:** `https://github.com/Arjun-flutter/grocery_app.git`
 2. **Install dependencies:** `flutter pub get`
 3. **Firebase:** Place `google-services.json` in `android/app/`.
 4. **Run:** `flutter run`
