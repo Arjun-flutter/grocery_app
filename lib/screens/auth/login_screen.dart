@@ -39,7 +39,9 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(e.toString())));
       }
     } finally {
       if (mounted) setState(() => _isLoading = false);
@@ -54,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final double headerHeight = screenHeight * 0.35;
     return Scaffold(
       backgroundColor: Colors.white,
-      resizeToAvoidBottomInset: true, 
+      resizeToAvoidBottomInset: true,
       body: Column(
         children: [
           // Responsive Header
@@ -63,9 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
             width: double.infinity,
             decoration: const BoxDecoration(
               color: primaryColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(100),
-              ),
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(100)),
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -76,7 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.only(left: 40, bottom: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end, // Align content to bottom of header
+                mainAxisAlignment: MainAxisAlignment.end,
+                // Align content to bottom of header
                 children: [
                   Container(
                     padding: const EdgeInsets.all(12),
@@ -84,7 +85,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Icon(Icons.shopping_bag_rounded, size: 40, color: Colors.white),
+                    child: const Icon(
+                      Icons.shopping_bag_rounded,
+                      size: 40,
+                      color: Colors.white,
+                    ),
                   ),
                   const SizedBox(height: 20),
                   const Text(
@@ -123,9 +128,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _passwordController,
                     isObscure: true,
                   ),
-                  
+
                   const SizedBox(height: 30),
-                  
+
                   _isLoading
                       ? const CircularProgressIndicator(color: primaryColor)
                       : SizedBox(
@@ -136,28 +141,48 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor,
                               foregroundColor: Colors.white,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                               elevation: 8,
                               shadowColor: primaryColor.withOpacity(0.4),
                             ),
                             child: const Text(
                               "GET STARTED",
-                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: 1),
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 1,
+                              ),
                             ),
                           ),
                         ),
-                  
+
                   const SizedBox(height: 30),
-                  
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Text("New user?", style: TextStyle(color: Colors.grey)),
+                      const Text(
+                        "New user?",
+                        style: TextStyle(color: Colors.grey),
+                      ),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterScreen()));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RegisterScreen(),
+                            ),
+                          );
                         },
-                        child: const Text("Create Account", style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold)),
+                        child: const Text(
+                          "Create Account",
+                          style: TextStyle(
+                            color: primaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ],
                   ),
