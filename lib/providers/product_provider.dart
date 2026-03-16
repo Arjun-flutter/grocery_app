@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/product_model.dart';
 import '../services/api_service.dart';
-import '../widgets/category_list.dart';
+import '../widgets/home/category_list.dart';
 
 class ProductProvider with ChangeNotifier {
   final ApiService _apiService = ApiService();

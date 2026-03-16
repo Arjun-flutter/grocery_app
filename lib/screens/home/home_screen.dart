@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/product_provider.dart';
-import '../providers/cart_provider.dart';
-import '../widgets/item_card.dart';
-import '../widgets/category_list.dart';
-import '../widgets/custom_search_bar.dart';
-import 'cart_page.dart';
+import '../../providers/product_provider.dart';
+import '../../providers/cart_provider.dart';
+import '../../widgets/product/item_card.dart';
+import '../../widgets/home/category_list.dart';
+import '../../widgets/common/custom_search_bar.dart';
+import '../cart/cart_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

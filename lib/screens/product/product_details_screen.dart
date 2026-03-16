@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/product_model.dart';
-import '../providers/cart_provider.dart';
+import '../../models/product_model.dart';
+import '../../providers/cart_provider.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final Product product;
@@ -145,7 +145,7 @@ class ProductDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
+          boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 10)],
         ),
         child: SizedBox(
           width: double.infinity,

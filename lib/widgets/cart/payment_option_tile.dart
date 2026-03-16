@@ -21,10 +21,9 @@ class PaymentOptionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isSelected = selectedValue == value;
-    const Color primaryColor = Colors.white; // Changed to white for black background
 
     return ListTile(
-      leading: Icon(icon, color: Colors.amber), // Amber icons look good on black
+      leading: const Icon(Icons.payment, color: Colors.amber), // Amber icons look good on black
       title: Text(
         title, 
         style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)

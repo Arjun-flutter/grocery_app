@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../providers/cart_provider.dart';
+import '../../providers/cart_provider.dart';
 
 class CartPaymentPanel extends StatelessWidget {
   final CartProvider cart;
@@ -81,9 +81,9 @@ class CartPaymentPanel extends StatelessWidget {
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("PAY NOW", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                      SizedBox(width: 5),
-                      Icon(Icons.arrow_forward_ios, size: 12),
+                      const Text("PAY NOW", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                      const SizedBox(width: 5),
+                      const Icon(Icons.arrow_forward_ios, size: 12),
                     ],
                   ),
                 ),

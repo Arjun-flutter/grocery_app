@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/home_screen.dart';
 import 'package:provider/provider.dart';
-import '../providers/cart_provider.dart';
-import '../widgets/cart_item_tile.dart';
-import '../widgets/cart_payment_panel.dart';
-import '../widgets/payment_option_tile.dart';
-import '../widgets/processing_overlay.dart';
-import '../services/payment_service.dart';
+import '../../providers/cart_provider.dart';
+import '../../widgets/cart/cart_item_tile.dart';
+import '../../widgets/cart/cart_payment_panel.dart';
+import '../../widgets/cart/payment_option_tile.dart';
+import '../../widgets/common/processing_overlay.dart';
+import '../../services/payment_service.dart';
 import 'payment_success_screen.dart';
-import 'main_navigation_screen.dart';
+import '../home/main_navigation_screen.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});

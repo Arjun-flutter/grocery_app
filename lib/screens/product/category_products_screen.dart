@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/product_provider.dart';
-import '../widgets/item_card.dart';
-import '../widgets/category_list.dart';
+import '../../providers/product_provider.dart';
+import '../../widgets/product/item_card.dart';
+import '../../widgets/home/category_list.dart';
 
 class CategoryProductsScreen extends StatelessWidget {
   final String categoryName;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/product_model.dart';
-import '../providers/cart_provider.dart';
-import '../screens/product_details_screen.dart';
+import '../../models/product_model.dart';
+import '../../providers/cart_provider.dart';
+import '../../screens/product/product_details_screen.dart';
 
 class ItemCard extends StatelessWidget {
   final Product product;
@@ -66,7 +66,7 @@ class ItemCard extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.9),
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [const BoxShadow(color: Colors.black12, blurRadius: 4)],
+                        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
                       ),
                       child: Row(
                         children: [
